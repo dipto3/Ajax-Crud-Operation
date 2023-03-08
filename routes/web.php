@@ -14,4 +14,6 @@ use App\Http\Controllers\ProductController;
 |
 */
 Route::get('/', [ProductController::class, 'index'])->name('user.index');
-Route::get('/add-product', [ProductController::class, 'add'])->name('add.product');
+Route::post('/add-product', [ProductController::class, 'add'])->name('add.product');
+Route::post('/update-product', [ProductController::class, 'updateproduct'])->name('update.product');
+Route::post('/delete-product', [ProductController::class, 'deleteproduct'])->name('delete.product');

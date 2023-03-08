@@ -36,32 +36,43 @@
         </thead>
         <tbody>
        
-            
-        
+            @foreach ($products  as $product )
+                
+           
           <tr>
-            <th scope="row"></th>
+            <th scope="row">{{$product->id}}</th>
          
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{$product->name}}</td>
+            <td>{{$product->price}}</td>
+            <td>{{$product->description}}</td>
            <td>
-            <a href="" class="btn btn-info update_productform">
+            <a href="" class="btn btn-info update_productform"
+            data-bs-toggle="modal" data-bs-target="#updateModal"
+            data-id = "{{$product->id}}"
+            data-name = "{{$product->name}}"
+            data-price = "{{$product->price}}"
+            data-description = "{{$product->description}}"
+            >
               <i class="las la-edit"></i>
             </a>
-            <a href="" class="btn btn-danger delete_product">
+            <a href="" class="btn btn-danger delete_product"
+            data-id = "{{$product->id}}"
+            >
               <i class="las la-trash-alt"></i>
             </a>
            </td>
           </tr>
-          
+          @endforeach
+        
         </tbody>
      
       </table>
-      {{-- {!!$products->links()!!} --}}
+      {!!$products->links()!!}
     </div>
 
 </div></div>
 @include('productjs')
 @include('addproduct')
+@include('update')
   </body>
 </html>
