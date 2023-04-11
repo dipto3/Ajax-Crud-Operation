@@ -50,12 +50,7 @@ class ProductController extends Controller
 
         //     [
         //         'name.required'=>'Name is required',
-        //         'name.unique'=>'Product Already Exist',
-        //         'price.required'=>'Price is required',
-        //         'description.required'=>'Description is required',
-        //     ]
-       
-        // );
+        
      Product::where('id',$request->up_id)->update([
         'name'=>$request->up_name,
         'price'=>$request->up_price,
